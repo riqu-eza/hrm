@@ -1,8 +1,11 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function LoginPage() {
+  const router = useRouter();
+
   const [form, setForm] = useState({ email: "", password: "" });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -23,7 +26,7 @@ export default function LoginPage() {
       if (!res.ok) throw new Error(data.error || "Login failed");
 
       console.log("User logged in:", data);
-      // TODO: Store JWT/session and redirect to dashboard
+      router.push("/dashboard"); // 👈 goes to dashboard page
     } catch (err: any) {
       setError(err.message);
     } finally {
