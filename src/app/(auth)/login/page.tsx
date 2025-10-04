@@ -24,11 +24,15 @@ export default function LoginPage() {
 
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Login failed");
-
+      localStorage.setItem("token", data.token);
       console.log("User logged in:", data);
       router.push("/dashboard"); // 👈 goes to dashboard page
-    } catch (err: any) {
-      setError(err.message);
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        setError(err.message);
+      } else {
+        setError("An unexpected error occurred");
+      }
     } finally {
       setLoading(false);
     }

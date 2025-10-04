@@ -12,9 +12,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en">
       <body className="bg-gray-50 text-gray-900">
         <UserProvider>
-        <header className="p-4 bg-blue-600 text-white font-bold">
-          HRM - House Rental Management
-        </header>
+        
         <main className="min-h-screen p-6">{children}</main>
         <footer className="p-4 text-center text-sm text-gray-500 border-t">
           © {new Date().getFullYear()} HRM SaaS. All rights reserved.
