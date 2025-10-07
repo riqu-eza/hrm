@@ -53,7 +53,7 @@ export default function Tenants() {
       setLoading(false);
     });
   }, []);
-
+console.log("tenants",tenants);
   const handleCreate = async () => {
     if (!selectedProperty || !selectedRoom) {
       alert("Please select both property and room");

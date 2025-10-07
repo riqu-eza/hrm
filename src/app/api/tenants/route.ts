@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { connectDB } from "@/lib/db";
 import Tenant from "@/models/Tenant";
 import Room from "@/models/Room";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import Property from "@/models/Property";
 
 export async function GET(req: Request) {
